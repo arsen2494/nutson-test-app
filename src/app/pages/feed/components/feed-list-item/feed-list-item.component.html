@@ -1,0 +1,34 @@
+<div class="card">
+  <mat-card>
+    <mat-card-header>
+      <img mat-card-avatar [ngSrc]="feed.author.user_avatar_url" [alt]="feed.author.user_name" [width]="40" [height]="40">
+      <mat-card-title>
+        <div class="feed-title">
+          {{ feed.author.user_name }}
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <img class="card-image" mat-card-image [ngSrc]="feed.thumbnail_url" [alt]="feed.media_description" [width]="400" [height]="400">
+    <mat-card-content>
+      <p>{{ feed.media_description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <span class="feed-counter">
+        <mat-icon>thumb_up</mat-icon>
+        <span class="counter">{{ feed.counters.likes }}</span>
+      </span>
+      <span class="feed-counter">
+        <mat-icon>visibility</mat-icon>
+        <span class="counter">{{ feed.counters.views }}</span>
+      </span>
+      <span class="feed-counter">
+        <mat-icon>comment</mat-icon>
+        <span class="counter">{{ feed.counters.comments }}</span>
+      </span>
+      <span class="feed-counter">
+        <mat-icon>share</mat-icon>
+        <span class="counter">{{ feed.counters.reposts }}</span>
+      </span>
+    </mat-card-actions>
+  </mat-card>
+</div>

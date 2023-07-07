@@ -1,0 +1,22 @@
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+
+  .login-btn {
+    background-color: white;
+
+    mat-spinner {
+      display: inline-block;
+      margin-bottom: -6px;
+      margin-left: 6px;
+    }
+  }
+
+  button:not(:first-child) {
+    margin-left: 16px;
+  }
+}

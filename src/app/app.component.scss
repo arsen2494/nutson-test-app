@@ -1,0 +1,6 @@
+@import "variables";
+
+.page-container {
+  height: calc(100% - $header-height);
+  background-color: #EBEDF5;
+}

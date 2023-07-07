@@ -1,0 +1,12 @@
+<div class="feed-container">
+  <div class="spinner-container" *ngIf="(isLoading$ | async); else feedTmpl">
+    <mat-spinner diameter="128"></mat-spinner>
+  </div>
+  <ng-template #feedTmpl>
+    <div class="feed-list">
+      <div *ngFor="let feed of (feed$ | async); trackBy: trackByFn" class="feed-item">
+        <app-feed-list-item [feed]="feed"></app-feed-list-item>
+      </div>
+    </div>
+  </ng-template>
+</div>

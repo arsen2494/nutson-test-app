@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/">NUTSon Test App</a>
+  <div class="buttons">
+    <button mat-flat-button routerLink="/feed">Feed</button>
+
+    <ng-container *ngIf="isLoggedIn$ | async; else loginTmpl">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="handleLogoutClick()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+
+
+    <ng-template #loginTmpl>
+      <ng-container *ngIf="{isLoading: isLoading$ | async} as context">
+        <button class="login-btn" mat-flat-button (click)="handleLoginClick()" [disabled]="context.isLoading!">
+          <span>Login</span>
+          <mat-spinner *ngIf="context.isLoading" color="primary" diameter="24"></mat-spinner>
+        </button>
+      </ng-container>
+    </ng-template>
+
+  </div>
+</mat-toolbar>

@@ -1,0 +1,30 @@
+@import "variables";
+
+.feed-container {
+  max-height: calc(100% - $header-height);
+  height: calc(100% - $header-height);
+  padding-top: 64px;
+}
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feed-list {
+  max-height: 600px;
+  overflow-x: scroll;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: white;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+.feed-item {
+  margin-bottom: 24px;
+}
