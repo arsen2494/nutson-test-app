@@ -8,7 +8,9 @@
         </div>
       </mat-card-title>
     </mat-card-header>
-    <img class="card-image" mat-card-image [ngSrc]="feed.thumbnail_url" [alt]="feed.media_description" [width]="400" [height]="400">
+    <video autoplay muted loop playsinline (click)="handleVideoClick(video)" #video>
+      <source [src]="feed.media_url" type="video/mp4">
+    </video>
     <mat-card-content>
       <p>{{ feed.media_description }}</p>
     </mat-card-content>

@@ -9,4 +9,8 @@ import { Feed } from "@models";
 })
 export class FeedListItemComponent {
   @Input() feed!: Feed;
+
+  handleVideoClick(videoEl: HTMLVideoElement): void {
+    videoEl.play();
+  }
 }

@@ -5,6 +5,7 @@ export interface Feed {
   preview_url: string;
   created_at: number;
   media_id: string;
+  media_url: string;
   media_description: string;
   counters: {
     comments: number;
